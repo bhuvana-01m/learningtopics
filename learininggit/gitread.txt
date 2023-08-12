@@ -1,0 +1,100 @@
+git config --global user.name "bhuvana"
+git config --global user.email "bhuvna@gmail"
+
+====LOCAL REPO
+git init directoryname 
+
+===
+//move to staging area--shows modifications 
+
+git add file1
+ 
+====
+//find stage 
+git stats 
+git log //shows commit id ,info  
+====
+git commit -m "message" //local repo 
+
+
+====
+//unstaging after adding - this will remove the file after adding 
+git rm --cached <file>
+//after commit ,we made the chnages we dont want to save that changes then restore it 
+git restore filename
+
+//move head position -revert back to old postion
+
+git reset commitid 
+git reset --soft commitid// files will be ready to commit -moved back to staging area 
+
+git reset --hard commitid//data loss may happen -totally removefrom version control
+
+========
+//particularly remove some commit -we want all other changes commits
+git revert comitid 
+git revert commitid --no-commit // commit log wil not be thr but deleted that changes 
+
+
+
+======REMOTE REPO[bitbuckt,github etc]
+//clone from remote repo (complete download) 
+git clone url
+
+//move to remote ->git push oirgin brnachname 
+git push origin master 
+
+git branch //shows branches 
+
+//When we have already cloned the directory but we want to do nextday task then we pull the codes and join in ->download new or changed files 
+git pull -r
+git pull commitid
+======
+git remote -v //list the remote 
+
+============
+CHANGE REPO ORIGIN WILL CHANGE THE REMOTE REPO 
+
+git remote set-url origin url
+
+//only for push change repo then 
+
+git remote set-url --push origin url (push)
+
+========BRANCHING -CREATE ,SWITCH,MERGE 
+ //CREATE 
+
+git branch branchname 
+
+//SWITCH OVER to other branch 
+
+git checkout branchname 
+create + siwtch 
+git checkout -b branchname 
+
+//MERGE -do when ur in target branch 
+git merge frombranch targetbranch 
+
+
+//sequnce of commits to merge means use rebase
+
+git rebase frombranch targetbranch
+
+//cherry-pick-specific 
+
+pick commit to merge 
+
+git cherry-pick commitid 
+
+//git conflicts 
+same line without pull -r user tried to push .
+(manual do it or by browsr github )
+
+
+
+
+          
+
+
+ 
+
