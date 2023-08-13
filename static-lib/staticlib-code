@@ -1,0 +1,18 @@
+//creating static library 
+meenakshinathan@DESKTOP-TDLDHA7 MINGW64 ~/libraries (master)
+$ gcc -c file.c -o lib_file.o
+
+meenakshinathan@DESKTOP-TDLDHA7 MINGW64 ~/libraries (master)
+$ gcc -c second.c -o lib_sec.o
+
+meenakshinathan@DESKTOP-TDLDHA7 MINGW64 ~/libraries (master)
+$ ar rcs lib_calc.a lib_file.o lib_sec.o
+
+
+//two files calc.h calling.c -linking lib
+gcc -c calling.c -o calling.o
+
+meenakshinathan@DESKTOP-TDLDHA7 MINGW64 ~/libraries (master)
+$ gcc -o calling calling.o -L. lib_calc.a
+
+
