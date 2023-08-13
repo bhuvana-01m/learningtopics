@@ -16,3 +16,23 @@ meenakshinathan@DESKTOP-TDLDHA7 MINGW64 ~/libraries (master)
 $ gcc -o calling calling.o -L. lib_calc.a
 
 
+//recomplie only changes will be made 
+disadvantage --
+-size increase 
+-when lib changes then recomplie is needed 
+
+
+$ gcc -c file.c -o lib_file.o
+
+meenakshinathan@DESKTOP-TDLDHA7 MINGW64 ~/libraries (master)
+$ ar rcs lib_calc.a lib_file.o lib_sec.o
+
+meenakshinathan@DESKTOP-TDLDHA7 MINGW64 ~/libraries (master)
+$ gcc -c calling.c -o calling.o
+
+meenakshinathan@DESKTOP-TDLDHA7 MINGW64 ~/libraries (master)
+$ gcc -o calling calling.o -L. lib_calc.a
+
+meenakshinathan@DESKTOP-TDLDHA7 MINGW64 ~/libraries (master)
+$ ./calling
+Gonna see about static library usage-- 110second file -sub -- 80
