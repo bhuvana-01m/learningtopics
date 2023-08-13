@@ -1,1 +1,12 @@
+//create dll
+g++ -c -DBUILD_MY_DLL shared_lib.cpp
+g++ -shared -o shared_lib.dll shared_lib.o -Wl,--out-implib,libshared_lib.a
 
+
+
+gcc -c file.c second.c -fpic //create obj files for these 
+gcc *.o -shared -o libdynamic.so //create dynamic 
+
+gcc -c main.c -o main.o
+gcc -o mainexe main.o L. libdynamic.so
+ 
